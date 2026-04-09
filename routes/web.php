@@ -22,6 +22,10 @@ use App\Http\Controllers\UserManagement\ProfileController;
 
 Route::get('/', fn() => redirect()->route('dashboard'));
 
+Route::get('/', function () {
+    return 'Laravel Railway OK 🚀';
+});
+
 Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
